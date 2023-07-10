@@ -1,0 +1,162 @@
+{% extends "index.html" %}
+
+{% block contents %}
+    <div class="small-container">
+        <div class="row row-2">
+            <h2>All Products</h2>
+            <label>
+                <select>
+                    <option>Default sorting</option>
+                    <option>Sort by price</option>
+                    <option>Sort by rating</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="row">
+
+            <div class="col-4">
+                <a href="/product-detail"><img src="/static/images/featuredprod/tastethemoney.jpg" alt="tastethemoney_canvass">
+                    <h4>Taste The Money</h4>
+                <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i> <i class="fa fa-star"></i></div>
+                <p>$85.99</p></a>
+            </div>
+
+            <div class="col-4">
+                <img src="/static/images/featuredprod/cashisking.jpg" alt="cashisking_canvass">
+                <h4>Cash is King</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>$75.99</p>
+            </div>
+            <div class="col-4">
+                <img src="/static/images/featuredprod/neonbill.jpg" alt="neonbill_canvass">
+                <h4>Neon Bill</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>$73.99</p>
+            </div>
+            <div class="col-4">
+                <img src="/static/images/featuredprod/makeitrain.jpg" alt="makeitrain_canvass">
+                <h4>Make it Rain</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$65.99</p>
+            </div>
+            {#--------------------- combine lates products to featured products-------------------------------#}
+            <div class="col-4">
+                <img src="/static/images/latestproduct/allin.jpg" alt="allin_canvass">
+                <h4>All In</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <p>$54.99</p>
+            </div>
+            <div class="col-4">
+                <img src="/static/images/latestproduct/moneytoburn.jpg" alt="moneytoburn_canvass">
+                <h4>Money to Burn</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>$66.29</p>
+            </div>
+            <div class="col-4">
+                <img src="/static/images/latestproduct/fearless.jpg" alt="fearless_canvass">
+                <h4>Fearless Mountain</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>$83.99</p>
+            </div>
+            <div class="col-4">
+                <img src="/static/images/latestproduct/hustle.jpg" alt="huslte_canvass">
+                <h4>Hustle</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$95.99</p>
+            </div>
+            <div class="col-4">
+                <img src="/static/images/latestproduct/businessman.jpg" alt="businessman_canvass">
+                <h4>Businessman</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$72.40</p>
+            </div>
+            <div class="col-4">
+                <img src="/static/images/latestproduct/timeismoney.jpg" alt="timeismoney_canvass">
+                <h4>Time is Money</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$78.10</p>
+            </div>
+            <div class="col-4">
+                <img src="/static/images/latestproduct/stopdreaming.jpg" alt="stopdreaming_canvass">
+                <h4>Start Dreaming</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$91.99</p>
+            </div>
+            <div class="col-4">
+                <img src="/static/images/latestproduct/beast.jpg" alt="beast_canvass">
+                <h4>Find Your Inner Beast</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <p>$60.99</p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

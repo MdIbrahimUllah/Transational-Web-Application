@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>CIM Canvass</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="CIMCanvass project"/>
+    <meta name="description" content="A project for transactional web course"/>
+    <meta name="author" content="Chitao, Ibrahim, Mark"/>
+
+    {#------------------------------------- CSS------------------------------------------------------------------#}
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/responsive.css">
+
+    {#---------------------------------------------------google font poppins-------------------------------------#}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    {#----------------------------------font awesome cdn for icons------------------------------------------------#}
+    <script src="https://kit.fontawesome.com/bf1f11f504.js" crossorigin="anonymous"></script>
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+
+<body>
+<div class="header">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="/about"><img src="/static/images/CIMlogo/CIMLogo.png" alt="CIM_LOGO" class="main-logo"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/product">Products</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    {% if current_user.is_authenticated %}
+                        <li><a href="/logout">Logout</a></li>
+                    {% else %}
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/register">Register</a></li>
+                    {% endif %}
+
+                </ul>
+            </nav>
+            <a href="/cart"> <img src="/static/images/CIMlogo/cart.png" alt="cart" class="cart-icon"></a>
+            <img src="/static/images/CIMlogo/hamburgermenu.png" alt="hamburgermenu" class="menu-icon"
+                 onclick="menutoggle()">
+        </div>
+        {% block contents %}
+            <div class="row">
+                <div class="col-2">
+                    <h1>Give your home <br>a new style!</h1>
+                    <p>The best thing about canvas art is that they are available in variety of shapes, sizes, designs,
+                        styles and colors. You can choose one which satisfies all your purposes and which suits your
+                        taste.
+                        While purchasing wall art you should purchase pieces <br>that go along well with each other.</p>
+                    <a href="" class="btn">Shop Now &#8594;</a>
+                </div>
+                <div class="col-2">
+                    <img src="/static/images/beast.jpg" alt="beast_canvass">
+                </div>
+            </div>
+            </div>
+            </div>
+
+            {#------------------------------------Sample products---------------------------------------------------------------#}
+            <div class="category">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="/static/images/sampledesign/success.jpg" alt="success_canvass">
+                    </div>
+                    <div class="col-3">
+                        <img src="/static/images/sampledesign/hustle.jpg" alt="hustle_canvass">
+                    </div>
+                    <div class="col-3">
+                        <img src="/static/images/sampledesign/mindset.jpg" alt="mindset_canvass">
+                    </div>
+                </div>
+            </div>
+
+            {#----------------------------------------- featured products-------------------------------------------------------#}
+            <div class="small-container">
+                <h2 class="title">Featured Products</h2>
+                <div class="row">
+                    <div class="col-4">
+                        <a href="product-detail.html"><img src="/static/images/featuredprod/tastethemoney.jpg"
+                                                           alt="tastethemoney_canvass"> </a>
+                        <a href="product-detail.html"><h4>Taste The Money</h4></a>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <p>$85.99</p>
+                    </div>
+                    <div class="col-4">
+                        <img src="/static/images/featuredprod/cashisking.jpg" alt="cashisking_canvass">
+                        <h4>Cash is King</h4>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                        </div>
+                        <p>$75.99</p>
+                    </div>
+                    <div class="col-4">
+                        <img src="/static/images/featuredprod/neonbill.jpg" alt="neonbill_canvass">
+                        <h4>Neon Bill</h4>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                        </div>
+                        <p>$73.99</p>
+                    </div>
+                    <div class="col-4">
+                        <img src="/static/images/featuredprod/makeitrain.jpg" alt="makeitrain_canvass">
+                        <h4>Make it Rain</h4>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                        <p>$65.99</p>
+                    </div>
+
+                    {#---------------------------------Latest Products----------------------------------------------------------#}
+                    <h2 class="tile">Latest Products</h2>
+                    <div class="row">
+                        <div class="col-4">
+                            <img src="/static/images/latestproduct/allin.jpg" alt="allin_canvass">
+                            <h4>All In</h4>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <p>$54.99</p>
+                        </div>
+                        <div class="col-4">
+                            <img src="/static/images/latestproduct/moneytoburn.jpg" alt="moneytoburn_canvass">
+                            <h4>Money to Burn</h4>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                            <p>$66.29</p>
+                        </div>
+                        <div class="col-4">
+                            <img src="/static/images/latestproduct/fearless.jpg" alt="fearless_canvass">
+                            <h4>Fearless Mountain</h4>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                            <p>$83.99</p>
+                        </div>
+                        <div class="col-4">
+                            <img src="/static/images/latestproduct/hustle.jpg" alt="huslte_canvass">
+                            <h4>Hustle</h4>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <p>$95.99</p>
+                        </div>
+                        <div class="col-4">
+                            <img src="/static/images/latestproduct/businessman.jpg" alt="businessman_canvass">
+                            <h4>Businessman</h4>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <p>$72.40</p>
+                        </div>
+                        <div class="col-4">
+                            <img src="/static/images/latestproduct/timeismoney.jpg" alt="timeismoney_canvass">
+                            <h4>Time is Money</h4>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <p>$78.10</p>
+                        </div>
+                        <div class="col-4">
+                            <img src="/static/images/latestproduct/stopdreaming.jpg" alt="stopdreaming_canvass">
+                            <h4>Start Dreaming</h4>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <p>$91.99</p>
+                        </div>
+                        <div class="col-4">
+                            <img src="/static/images/latestproduct/beast.jpg" alt="beast_canvass">
+                            <h4>Find Your Inner Beast</h4>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <p>$60.99</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {#    <===========================================offer============================================================>#}
+            <div class="offer">
+                <div class="small-container">
+                    <div class="row">
+                        <div class="col-2">
+                            <img src="/static/images/mindset.jpg" alt="mindset_canvass" class="offer-img">
+                        </div>
+                        <div class="col-2">
+                            <p> Exclusively Available on CIM Canvass Store!</p>
+                            <h1>Sample</h1>
+                            <small> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid amet doloribus
+                                earum
+                                eligendi excepturi,
+                                fugit impedit in nam nihil non perferendis quas rem tempora vel velit, veniam veritatis
+                                voluptatem.</small>
+                            <a href="" class="btn">Buy Now &#8594;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {#---------------------------------------------- About --------------------------------------------------------------#}
+
+            <div class="about">
+                <div class="small-container">
+                    <div class="row">
+                        <div class="col-3">
+                            <i class="fa fa-quote-left"></i>
+                            <p>As a full-stack developer and founder of CIMCanvass, I bring 9 years of experience in
+                                banking and insurance and a background in Information Management to the table. I am
+                                currently studying at Vanier College to enhance my software development skills. My goal
+                                is to create innovative solutions for various industries using my technical expertise
+                                and business knowledge.</p>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <img src="/static/images/owners/mark.jpg" alt="mark">
+                            <h3>Mark Benedict Muyot</h3>
+                        </div>
+
+                        <div class="col-3">
+                            <i class="fa fa-quote-left"></i>
+                            <p>As a co-founder of CIMCanvass and a software development student at Vanier College, I
+                                bring a blend of technical skills and real-world experience to the table. Skilled in
+                                Java, C#, Python, SQL, HTML & CSS, I have honed my web and mobile development abilities
+                                at Vanier College. I also bring experience from my role as a self-employed boxing
+                                instructor, where I thrive in high-pressure environments. Emphasize my role as a
+                                co-founder of CIMCanvass.</p>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <img src="/static/images/owners/chitao.jpg" alt="chitao">
+                            <h3>Chitao Li</h3>
+                        </div>
+
+                        <div class="col-3">
+                            <i class="fa fa-quote-left"></i>
+                            <p>As a key founder of CIMCanvass, I bring extensive technical expertise in software
+                                development. My skills include JAVA, SQL, C#, HTML, CSS, and JavaScript, with experience
+                                in Agile methodology and using GitHub, Windows, Linux OSs, and Non-Relational databases
+                                like Firebase. Currently working on projects in Cybersecurity, Transactional Web
+                                applications using Python and Android mobile development.</p>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <img src="/static/images/owners/ibrahim.jpg" alt="ibrahim">
+                            <h3>Md Ibrahim Ullah</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                var MenuItems = document.getElementById("MenuItems");
+                MenuItems.style.maxHeight = "0px";
+
+                function menutoggle() {
+                    if (MenuItems.style.maxHeight == "0px") {
+                        MenuItems.style.maxHeight = "200px"
+                    } else {
+                        MenuItems.style.maxHeight = "0px"
+                    }
+                }
+            </script>
+        {% endblock %}
+{#<-------------------------------------------footer---------------------------------------------------------------->#}
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Copyright</h3>
+                <p>Copyright 2022 - CIMCanvas Inc. All Rights Reserved.</p>
+            </div>
+            <div class="footer-col-2">
+                <img src="/static/images/CIMlogo/CIMlogo2.png" alt="mark">
+                <p>Fill your cart with art!</p>
+            </div>
+            <div class="footer-col-3">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li>Blog Post</li>
+                    <li>Return Policy</li>
+                    <li>Join Affiliate</li>
+                    <li>Coupons</li>
+                </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3>Follow us</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Github</li>
+                    <li>Instagram</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

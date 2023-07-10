@@ -1,0 +1,73 @@
+{% macro render_field(field) %}
+    <dt>{{ field.label }}
+    <dd>{{ field(**kwargs)|safe }}
+        {% if field.errors %}
+            <ul class=errors>
+                {% for error in field.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </dd>
+{% endmacro %}
+
+{% extends "index.html" %}
+
+{% block contents %}
+    {#<-------------------------------------------account page----------------------------------------------------------->#}
+    <div class="account-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <img src="/static/images/beast.jpg" alt="beast_canvass" width="95%">
+                </div>
+                <div class="form-container">
+                    <div class="form-btn">
+                        <span onclick="login()">Login</span>
+                        <span onclick="register()">Register</span>
+                        <hr id=" Indicator">
+                    </div>
+                    <form id="LoginForm" action="/login" method="post">
+                        {% for message in get_flashed_messages() %}
+                            {{ message }}<br/>
+                        {% endfor %}
+
+                        {{ form.csrf_token }}
+                        {{ form.username.label }} {{ form.username }}<br/>
+                        {{ form.password.label }} {{ form.password }}<br/>
+                        {{ form.submit }}
+                        <a href="">Forgot Password</a>
+                    </form>
+                    <form id="RegForm" action="/register" method="post">
+                        {{ form2.csrf_token }}
+                        {{ render_field(form2.username) }}
+                        {{ render_field(form2.email) }}
+                        {{ render_field(form2.phone) }}
+                        {{ render_field(form2.password) }}
+                        {{ render_field(form2.password2) }}
+                        <button type="submit" class="btn" {{ form2.submit }}>Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var LoginForm = document.getElementById("LoginForm");
+        var RegForm = document.getElementById("RegForm");
+        var Indicator = document.getElementById("Indicator");
+
+        function register() {
+            RegForm.style.transform = "translateX(0px)";
+            LoginForm.style.transform = "translateX(0px)";
+            Indicator.style.transform = "translateX(100px)";
+
+        }
+
+        function login() {
+            RegForm.style.transform = "translateX(300px)";
+            LoginForm.style.transform = "translateX(300px)";
+            Indicator.style.transform = "translateX(0px)";
+        }
+    </script>
+{% endblock %}

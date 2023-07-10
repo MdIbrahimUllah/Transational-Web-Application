@@ -1,0 +1,97 @@
+{% extends "index.html" %}
+
+{% block  contents %}
+
+    {#--------------------------------single product detail added---------------------------------------#}
+    <div class="small-container single-product">
+        <div class="row">
+            <div class="col-2">
+                <img src="/static/images/featuredprod/tastethemoney.jpg" alt="tastethemoney_canvass" id="ProductImg"
+                     class="single-prod-img">
+                <div class="small-img-row">
+                    <div class="small-img-col">
+
+                    </div>
+                </div>
+                <div class="small-img-row">
+                    <div class="small-img-col">
+                        <img src="/static/images/mockups/tastethemoney/mockup1.jpg" alt="mockup1_canvass"
+                             class="small-img">
+                    </div>
+                </div>
+                <div class="small-img-row">
+                    <div class="small-img-col">
+                        <img src="/static/images/mockups/tastethemoney/mockup2.jpg" alt="mockup2_canvass"
+                             class="small-img">
+                    </div>
+                </div>
+                <div class="small-img-row">
+                    <div class="small-img-col">
+                        <img src="/static/images/mockups/tastethemoney/mockup3.png" alt="mockup3_canvass"
+                             class="small-img">
+                    </div>
+                </div>
+                <div class="small-img-row">
+                    <div class="small-img-col">
+                        <img src="/static/images/mockups/tastethemoney/mockup4.png" alt="mockup3_canvass"
+                             class="small-img">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <p>Featured Canvass</p>
+                <h1>Taste the Money Canvass</h1>
+                <h4>$85.99</h4>
+                <select>
+                    <option>48"x32"</option>
+                    <option>36"x24"</option>
+                    <option>30"x20"</option>
+                    <option>24"x16"</option>
+                    <option>12"x8"</option>
+                </select>
+                <input type="number" value="1">
+                <a href="" class="btn">Add To Cart</a>
+                <h3>Product Details</h3>
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto, dignissimos
+                    eum natus nisi quas voluptatum. A ad animi dignissimos, dolore eaque excepturi in, laudantium
+                    maiores nemo, neque quis reprehenderit?</p>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px"
+            } else {
+                MenuItems.style.maxHeight = "0px"
+            }
+        }
+    </script>
+
+    <script>
+        var ProductImg = document.getElementById("ProductImg");
+        var SmallImg = document.getElementsByClassName("small-img")
+        SmallImg[0].onclick = function () {
+            ProductImg.src = SmallImg[0].src;
+        }
+        SmallImg[1].onclick = function () {
+            ProductImg.src = SmallImg[1].src;
+        }
+        SmallImg[2].onclick = function () {
+            ProductImg.src = SmallImg[2].src;
+        }
+        SmallImg[3].onclick = function () {
+            ProductImg.src = SmallImg[3].src;
+        }
+
+    </script>
+
+{% endblock %}
